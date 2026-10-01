@@ -1,0 +1,17 @@
+# 统一以 LF 存入仓库（检出时由 git 按平台处理），避免 CRLF/LF 混用造成噪声 diff
+* text=auto
+
+# 二进制资源：不要让 git 做行尾转换或文本 diff
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.ico binary
+
+# 这些是技能的可执行脚本，强制 LF
+*.py text eol=lf
+
+# 提示词与模板：强制 LF，保证跨平台渲染结果一致
+*.txt text eol=lf
+*.md  text eol=lf
+*.json text eol=lf

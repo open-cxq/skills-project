@@ -1,0 +1,117 @@
+{
+  "preset_id": "zhiyan",
+  "theme_label_cn": "紫藤主题 · 箫 · 幻蝶灵境·守梦人",
+  "name_cn": "紫嫣",
+  "seal_cn": "紫嫣",
+  "medallion_char": "嫣",
+  "verse1": "一箫引万蝶，",
+  "verse2": "半梦借君眠。",
+  "age_desc": "likely in {p} late teens",
+  "age_phrase": "a slender young woman, likely in {p} late teens",
+  "paper_sheet": "pale lilac",
+  "paper_whisper": "lilac",
+  "ground_tint": "lilac",
+  "watermark": "wisteria vine and butterflies",
+  "watermark_noun": "vine",
+  "border_color": "violet",
+  "stain_color": "lilac",
+  "shadow_color": "violet",
+  "scene_name": "painted night garden",
+  "gradient": "pale lilac at the top to a deeper violet lower down",
+  "hanging_elements": "wisteria branches",
+  "hanging_short": "wisteria",
+  "drifting_elements": "drifting petals",
+  "drifting_short": "petals",
+  "moon_halo": "a hazy full moon ringed by a violet halo",
+  "backdrop": "silhouetted mountain ridges and a small tiered Chinese pavilion standing behind the figure",
+  "motes": "violet motes",
+  "hair_color": "pale lilac-silver",
+  "hair_ornaments": "small wisteria sprigs and silver butterfly pins",
+  "robe_color": "violet",
+  "robe_gradient": "pale lilac at the chest to saturated violet at the trailing hem",
+  "sash": "wisteria blossoms and silver chain",
+  "crown": "wisteria flower crown",
+  "earrings": "butterfly-wing silver earrings",
+  "ankle": "silver ankle ornaments",
+  "weapon_noun": "flute",
+  "hold_action": "{V:hold} a white jade xiao flute raised before {o}",
+  "hold_tail": "raised to the lips",
+  "weapon_charm": "a violet crystal butterfly charm hanging from its lower end",
+  "companions": "violet butterflies",
+  "expressions": [
+    "慵懒浅笑",
+    "垂眸沉思",
+    "微醺醉意",
+    "侧颜回盼"
+  ],
+  "expr_desc_1": "{p} eyelids sit heavy and half lowered with the pupils showing beneath them, and the corners of {p} mouth curve up into a soft lazy smile",
+  "expr_desc_2": "{p} head is upright but {p} lids are lowered until {p} gaze rests down and away and {p} eyes are barely open, {p} lips closed and relaxed",
+  "expr_desc_3": "{p} head tips a little back, {p} lids sit low and glossy, {p} lips part loosely and colour rises on both cheeks",
+  "expr_desc_4": "{p} head turns three-quarters away from the reader and {p} chin lifts, while {p} eyes turn back toward the reader over {p} shoulder",
+  "detail_upper": [
+    "发饰细节",
+    "蝶翼耳饰",
+    "腰饰细节",
+    "首饰细节"
+  ],
+  "detail_lower": [
+    "袖摆细节",
+    "裙摆细节",
+    "鞋履细节",
+    "材质细节"
+  ],
+  "colors": [
+    {
+      "hex": "#F7F5FB",
+      "cn": "月白",
+      "en": "moon white"
+    },
+    {
+      "hex": "#E4D9F2",
+      "cn": "烟霞紫",
+      "en": "misty lilac"
+    },
+    {
+      "hex": "#C6B2E3",
+      "cn": "兰若紫",
+      "en": "wisteria violet"
+    },
+    {
+      "hex": "#A995C8",
+      "cn": "星辰紫",
+      "en": "star violet"
+    },
+    {
+      "hex": "#8A6FBF",
+      "cn": "琉璃紫",
+      "en": "glass violet"
+    },
+    {
+      "hex": "#6B5A8E",
+      "cn": "暮山紫",
+      "en": "dusk violet"
+    }
+  ],
+  "color_verse": [
+    "幻蝶如梦，",
+    "我为你，",
+    "长守紫藤。"
+  ],
+  "profile": [
+    "姓名：紫嫣",
+    "身份：幻蝶灵境·守梦人",
+    "年龄：十九",
+    "性格：慵懒散漫，清醒护短",
+    "喜好：酿紫藤花酒、收集众生梦境、雨中吹箫",
+    "武器：幻蝶玉箫·青眠"
+  ],
+  "couplet": "我本无心，只因你入梦，便留了心。",
+  "weapon_drawing": "a small drawing of the white jade flute",
+  "background_text": "紫嫣，幻蝶灵境的守梦人。{T}以箫声引蝶，以梦为舟，渡人入梦，却从不入他人的梦。看似慵懒散漫、游戏人间，实则清醒孤绝，只肯在月下独酌。{T}在灵境中种满紫藤，引万千幻蝶为伴，唯独等一个从不做梦的人。箫声起时，紫蝶覆月；箫声落处，梦醒无痕。",
+  "signature": "—— 一箫一蝶一浮生，梦里不知身是客。",
+  "vine": "wisteria vine",
+  "drop": "petals",
+  "lighting": "the violet moon behind thin cloud",
+  "palette": "pale lilac, wisteria violet and moon white",
+  "mood": "dreamlike, quietly melancholy"
+}

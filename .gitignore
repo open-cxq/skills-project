@@ -1,0 +1,27 @@
+# 操作系统
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+
+# 渲染脚本的临时产物
+_broken.json
+_init.json
+_err.txt
+*.tmp
+
+# 个人备份（原始大图不进仓库）
+skills-project-image-originals/
+*.orig.png

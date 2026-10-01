@@ -1,0 +1,39 @@
+头饰槽（crown）修复对照 —— 修复前，第 7、8 段是写死的 "flower crown"，换任何角色都长花冠
+
+====================================================================================================
+
+【A. 花冠（紫嫣原设定：wisteria flower crown）】
+  第5段穿戴句： with translucent long gauze sleeves, a wisteria flower crown, butterfly-wing silver earrings and silver ankle ornaments. She holds
+  第7段后视图： showing the back of her head, the back of the flower crown and the back of the robe
+  第8段表情板： The four heads share one face, one hairstyle, one flower crown and one framing
+  全文出现 "flower crown" 次数：3
+
+【B. 不戴头饰（crown / earrings / ankle 三项留空）】
+   ！告警：crown / earrings / ankle 三项全空：这位人物将没有头饰、耳饰和踝饰，请确认是有意为之
+  第5段穿戴句： with translucent long gauze sleeves. She holds
+  第7段后视图： showing the back of her head and the back of the robe
+  第8段表情板： The four heads share one face, one hairstyle and one framing
+  全文出现 "flower crown" 次数：0
+
+【C. 换成玉凤簪（crown = jade phoenix hairpin）】
+  第5段穿戴句： with translucent long gauze sleeves, a jade phoenix hairpin, butterfly-wing silver earrings and silver ankle ornaments. She holds
+  第7段后视图： showing the back of her head, the back of the hairpin and the back of the robe
+  第8段表情板： The four heads share one face, one hairstyle, one hairpin and one framing
+  全文出现 "flower crown" 次数：0
+
+【D. 换成银质发箍（crown = silver filigree circlet）】
+  第5段穿戴句： with translucent long gauze sleeves, a silver filigree circlet, butterfly-wing silver earrings and silver ankle ornaments. She holds
+  第7段后视图： showing the back of her head, the back of the circlet and the back of the robe
+  第8段表情板： The four heads share one face, one hairstyle, one circlet and one framing
+  全文出现 "flower crown" 次数：0
+
+====================================================================================================
+派生链（不用手填，脚本自动算）：
+  crown              = wisteria flower crown
+  -> crown_noun      = flower crown
+  -> crown_back_phrase  = ', the back of the flower crown'
+  -> crown_share_phrase = ', one flower crown'
+  -> accessories_clause = ', a wisteria flower crown, butterfly-wing silver earrings and silver ankle ornaments'
+  derive_crown_noun('jade phoenix hairpin'  ) -> 'hairpin'    命中词尾=True
+  derive_crown_noun('silver filigree circlet') -> 'circlet'    命中词尾=True
+  derive_crown_noun('crown of white jade'   ) -> 'jade'       命中词尾=False

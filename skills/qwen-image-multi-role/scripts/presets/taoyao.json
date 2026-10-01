@@ -1,0 +1,117 @@
+{
+  "preset_id": "taoyao",
+  "theme_label_cn": "桃粉主题 · 扇 · 桃梦花境·牵缘人",
+  "name_cn": "桃夭",
+  "seal_cn": "桃夭",
+  "medallion_char": "夭",
+  "verse1": "一扇引春蝶，",
+  "verse2": "半梦借君眠。",
+  "age_desc": "likely in {p} late teens",
+  "age_phrase": "a slender young woman, likely in {p} late teens",
+  "paper_sheet": "pale peach-pink-tinted",
+  "paper_whisper": "peach pink",
+  "ground_tint": "peach-pink",
+  "watermark": "peach blossoms, pink butterflies and trailing vines",
+  "watermark_noun": "peach-blossom",
+  "border_color": "rose-pink",
+  "stain_color": "pink",
+  "shadow_color": "pink",
+  "scene_name": "painted peach dream flower realm",
+  "gradient": "pale cherry pink at the top to a deeper rose pink lower down",
+  "hanging_elements": "peach and cherry branches",
+  "hanging_short": "peach branches",
+  "drifting_elements": "drifting petals",
+  "drifting_short": "petals",
+  "moon_halo": "a hazy pink moon ringed by a soft rose halo",
+  "backdrop": "silhouetted mountain ridges and a small tiered Chinese pavilion standing behind the figure",
+  "motes": "pink motes",
+  "hair_color": "pale peach-silver",
+  "hair_ornaments": "small peach blossoms and silver butterfly pins",
+  "robe_color": "pink",
+  "robe_gradient": "cherry pink at the chest to saturated rose pink at the trailing hem",
+  "sash": "peach blossoms and silver chain",
+  "crown": "peach-blossom flower crown",
+  "earrings": "pink butterfly-wing silver earrings",
+  "ankle": "silver ankle ornaments",
+  "weapon_noun": "fan",
+  "hold_action": "{V:hold} a peach-blossom jade fan \"绯梦\" raised before {p} lips",
+  "hold_tail": "raised before {p} lips",
+  "weapon_charm": "a pink crystal peach-blossom charm hanging from its handle",
+  "companions": "pink butterflies",
+  "expressions": [
+    "娇懒浅笑",
+    "垂眸含羞",
+    "微醺桃酿",
+    "侧颜回盼"
+  ],
+  "expr_desc_1": "{p} eyelids sit heavy and half lowered with the pupils showing beneath them, and the corners of {p} mouth curve up into a soft lazy smile",
+  "expr_desc_2": "{p} head is upright but {p} lids are lowered until {p} gaze rests down and away and {p} eyes are barely open, {p} lips closed and relaxed",
+  "expr_desc_3": "{p} head tips a little back, {p} lids sit low and glossy, {p} lips part loosely and colour rises on both cheeks",
+  "expr_desc_4": "{p} head turns three-quarters away from the reader and {p} chin lifts, while {p} eyes turn back toward the reader over {p} shoulder",
+  "detail_upper": [
+    "发饰细节",
+    "蝶翼耳饰",
+    "腰饰细节",
+    "扇子细节"
+  ],
+  "detail_lower": [
+    "袖摆细节",
+    "裙摆细节",
+    "鞋履细节",
+    "材质细节"
+  ],
+  "colors": [
+    {
+      "hex": "#FFF7FA",
+      "cn": "月白",
+      "en": "moon white"
+    },
+    {
+      "hex": "#F9D9E5",
+      "cn": "樱粉",
+      "en": "cherry pink"
+    },
+    {
+      "hex": "#F4A7B9",
+      "cn": "桃夭粉",
+      "en": "peach pink"
+    },
+    {
+      "hex": "#E56B8A",
+      "cn": "胭脂粉",
+      "en": "rouge pink"
+    },
+    {
+      "hex": "#C94F7C",
+      "cn": "玫瑰粉",
+      "en": "rose pink"
+    },
+    {
+      "hex": "#8E4A6B",
+      "cn": "暮粉紫",
+      "en": "dusk pink-purple"
+    }
+  ],
+  "color_verse": [
+    "粉蝶如梦，",
+    "我为你，",
+    "长守桃林。"
+  ],
+  "profile": [
+    "姓名：桃夭",
+    "身份：桃梦花境·牵缘人",
+    "年龄：十七",
+    "性格：娇懒浪漫，天真执着",
+    "喜好：收情书、酿桃花蜜、放河灯、雨中折花",
+    "武器：桃花玉扇·绯梦"
+  ],
+  "couplet": "我本无心，只因你入梦，便留了心。",
+  "weapon_drawing": "a small drawing of the peach-blossom jade fan",
+  "background_text": "桃夭，桃梦花境的牵缘人。{T}以扇引蝶，以花为舟，渡人入情，却从不入他人的梦。看似娇懒浪漫、游戏人间，实则清醒孤绝，只肯在月下独酌。{T}在花境中种满桃树，引万千粉蝶为伴，唯独等一个从不入梦的人。扇声起时，粉蝶覆月；扇声落处，梦醒无痕。",
+  "signature": "—— 一扇一蝶一浮生，梦里不知身是客。",
+  "vine": "peach vine",
+  "drop": "petals",
+  "lighting": "the pink moon behind thin cloud",
+  "palette": "moon white, cherry pink and rose pink",
+  "mood": "romantic, quietly wistful"
+}

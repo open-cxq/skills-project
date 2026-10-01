@@ -1,0 +1,117 @@
+{
+  "preset_id": "suxue",
+  "theme_label_cn": "冰雪蓝主题 · 纸伞 · 寒山灵境·守雪人（新角色示范，未实跑验收）",
+  "name_cn": "素雪",
+  "seal_cn": "素雪",
+  "medallion_char": "雪",
+  "verse1": "一伞听雪落，",
+  "verse2": "半梦借君眠。",
+  "age_desc": "about twenty-one",
+  "age_phrase": "a slender young woman of about twenty-one",
+  "paper_sheet": "pale frost-blue-tinted",
+  "paper_whisper": "frost blue",
+  "ground_tint": "frost-blue",
+  "watermark": "plum blossoms, snowflakes and folded pine",
+  "watermark_noun": "snowflake",
+  "border_color": "slate blue",
+  "stain_color": "pale blue",
+  "shadow_color": "ice blue",
+  "scene_name": "painted snow mountain dreamscape",
+  "gradient": "pale frost blue at the top to a deeper slate blue lower down",
+  "hanging_elements": "pine branches and plum twigs",
+  "hanging_short": "pine branches",
+  "drifting_elements": "drifting snow",
+  "drifting_short": "snow",
+  "moon_halo": "a hazy full moon ringed by a pale silver halo",
+  "backdrop": "silhouetted mountain ridges and a small tiered Chinese pavilion standing behind the figure",
+  "motes": "silver snow motes",
+  "hair_color": "pale frost-silver",
+  "hair_ornaments": "small plum blossoms and silver snowflake pins",
+  "robe_color": "frost blue",
+  "robe_gradient": "pale frost blue at the chest to saturated slate blue at the trailing hem",
+  "sash": "plum blossoms and silver chain",
+  "crown": "plum-blossom flower crown",
+  "earrings": "ice-crystal silver earrings",
+  "ankle": "silver ankle ornaments",
+  "weapon_noun": "umbrella",
+  "hold_action": "{V:hold} a pale blue jade parasol \"雪落\" raised before {o}",
+  "hold_tail": "raised before {o}",
+  "weapon_charm": "a silver snowflake charm hanging from its handle",
+  "companions": "white cranes",
+  "expressions": [
+    "清冷浅笑",
+    "垂眸听雪",
+    "微醺梅酿",
+    "侧颜回盼"
+  ],
+  "expr_desc_1": "{p} eyelids sit cool and half lowered with the pupils showing beneath them, and the corners of {p} mouth curve up into a soft cool smile",
+  "expr_desc_2": "{p} head is upright but {p} lids are lowered until {p} gaze rests down and away and {p} eyes are barely open, {p} lips closed and relaxed",
+  "expr_desc_3": "{p} head tips a little back, {p} lids sit low and glossy, {p} lips part loosely and colour rises on both cheeks",
+  "expr_desc_4": "{p} head turns three-quarters away from the reader and {p} chin lifts, while {p} eyes turn back toward the reader over {p} shoulder",
+  "detail_upper": [
+    "发饰细节",
+    "冰晶耳饰",
+    "腰饰细节",
+    "伞骨细节"
+  ],
+  "detail_lower": [
+    "袖摆细节",
+    "裙摆细节",
+    "鞋履细节",
+    "材质细节"
+  ],
+  "colors": [
+    {
+      "hex": "#FBFCFE",
+      "cn": "月白",
+      "en": "snow white"
+    },
+    {
+      "hex": "#E6F0F7",
+      "cn": "霜蓝",
+      "en": "frost blue"
+    },
+    {
+      "hex": "#BFD8E8",
+      "cn": "冰蓝",
+      "en": "ice blue"
+    },
+    {
+      "hex": "#8FB8D6",
+      "cn": "湖蓝",
+      "en": "lake blue"
+    },
+    {
+      "hex": "#5F87A8",
+      "cn": "青碧",
+      "en": "slate teal"
+    },
+    {
+      "hex": "#37506A",
+      "cn": "暮山青",
+      "en": "dusk slate"
+    }
+  ],
+  "color_verse": [
+    "雪影如梦，",
+    "我为你，",
+    "长守寒山。"
+  ],
+  "profile": [
+    "姓名：素雪",
+    "身份：寒山灵境·守雪人",
+    "年龄：二十一",
+    "性格：清冷自持，外冷内热",
+    "喜好：煮雪烹茶、收留迷途、雪中独行",
+    "武器：寒玉纸伞·雪落"
+  ],
+  "couplet": "我本无心，只因你入梦，便留了心。",
+  "weapon_drawing": "a small drawing of the pale blue jade parasol",
+  "background_text": "素雪，寒山灵境的守雪人。{T}以伞引鹤，以雪为舟，渡人归寒，却从不入他人的炉火。看似清冷自持、游戏人间，实则温热孤勇，只肯在雪夜独行。{T}在灵境中种满寒梅，引万千白鹤为伴，唯独等一个从不回头的旅人。伞声起时，白雪覆山；伞声落处，雪落无痕。",
+  "signature": "—— 一伞一鹤一浮生，梦里不知身是客。",
+  "vine": "plum vine",
+  "drop": "snow",
+  "lighting": "the pale winter moon behind thin cloud",
+  "palette": "moon white, frost blue and ice blue",
+  "mood": "cold, quietly tender"
+}

@@ -1,0 +1,35 @@
+性别切换对照 —— 只改 gender 一个字段（变量底：紫嫣）
+====================================================================================================
+
+脚本自动翻：人物总称 / 指代 / 全部代词 / 动词变位 / 年龄从句主语 / 中文代词
+自己手写的自由文本请用令牌 {s} {p} {o} {T} {V:原形}；写死 her/she 会被体检点名告警
+
+【gender = female】
+  第1段总称   ： character card of a young Chinese fantasy immortal woman, laid out
+  年龄从句    ： character — a slender young woman, likely in her late teens, standing
+  立绘句      ： glancing back over her shoulder, her feet resting
+  穿戴句      ： gauze sleeves, a wisteria flower crown, butterfly-wing silver earrings and silver ankle ornaments. She holds a white jade xiao flute raised before her, a violet crystal butterfly charm hanging from its lower end, and violet butterflies circle
+  后视图      ： showing the back of her head, the back of the flower crown and the back of the robe
+  表情板      ： share one face, one hairstyle, one flower crown and one framing
+  中文代词    ： 她 x2 / 他 x1 / TA x0
+  与该性别不符的词： 无（干净）
+
+【gender = male】
+  第1段总称   ： character card of a young Chinese fantasy immortal man, laid out
+  年龄从句    ： character — a slender young man, likely in his late teens, standing
+  立绘句      ： glancing back over his shoulder, his feet resting
+  穿戴句      ： gauze sleeves, a wisteria flower crown, butterfly-wing silver earrings and silver ankle ornaments. He holds a white jade xiao flute raised before him, a violet crystal butterfly charm hanging from its lower end, and violet butterflies circle
+  后视图      ： showing the back of his head, the back of the flower crown and the back of the robe
+  表情板      ： share one face, one hairstyle, one flower crown and one framing
+  中文代词    ： 她 x0 / 他 x3 / TA x0
+  与该性别不符的词： 无（干净）
+
+【gender = neutral】
+  第1段总称   ： character card of a young Chinese fantasy immortal figure, laid out
+  年龄从句    ： character — a slender young figure, likely in their late teens, standing
+  立绘句      ： glancing back over their shoulder, their feet resting
+  穿戴句      ： gauze sleeves, a wisteria flower crown, butterfly-wing silver earrings and silver ankle ornaments. They hold a white jade xiao flute raised before them, a violet crystal butterfly charm hanging from its lower end, and violet butterflies circle
+  后视图      ： showing the back of their head, the back of the flower crown and the back of the robe
+  表情板      ： share one face, one hairstyle, one flower crown and one framing
+  中文代词    ： 她 x0 / 他 x1 / TA x2
+  与该性别不符的词： 无（干净）

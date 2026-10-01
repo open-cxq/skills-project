@@ -1,0 +1,123 @@
+{
+  "preset_id": "lingshuang",
+  "theme_label_cn": "冰霜蓝主题 · 剑 · 霜华灵境·守剑人（东方仙侠绝色女剑仙）",
+  "name_cn": "凌霜",
+  "seal_cn": "凌霜",
+  "medallion_char": "霜",
+  "verse1": "一剑引霜鹤，",
+  "verse2": "半梦借君眠。",
+  "gender": "female",
+  "subject_desc": "a young Chinese fantasy sword immortal woman",
+  "subject_ref": "this sword immortal",
+  "age_desc": "about twenty",
+  "age_phrase": "a slender young woman of about twenty",
+  "paper_sheet": "pale frost-blue-tinted",
+  "paper_whisper": "frost blue",
+  "ground_tint": "frost-blue",
+  "watermark": "cloud scrolls, frost crystals and slender sword shapes",
+  "watermark_noun": "cloud-scroll",
+  "border_color": "slate blue",
+  "stain_color": "pale frost blue",
+  "shadow_color": "frost blue",
+  "scene_name": "painted frost peak dreamscape",
+  "gradient": "pale frost blue at the top to a deeper slate blue lower down",
+  "hanging_elements": "frosted pine branches and hanging icicles",
+  "hanging_short": "frosted pine",
+  "drifting_elements": "drifting frost crystals",
+  "drifting_short": "frost crystals",
+  "moon_halo": "a hazy full moon ringed by a pale ice-blue halo",
+  "backdrop": "silhouetted snow ridges and a small tiered Chinese pavilion standing behind the figure",
+  "motes": "pale ice-blue motes",
+  "hair_color": "ink-black",
+  "hair_style": "gathered up into a high ponytail",
+  "hair_ornaments": "small silver frost pins and a faint pale-blue sword-shaped sigil set between the brows",
+  "robe_color": "white",
+  "underrobe_color": "moon-white",
+  "robe_gradient": "pure white at the chest to a pale ice blue at the trailing hem",
+  "sash": "carved white jade links and a silver frost chain",
+  "crown": "",
+  "earrings": "frost-crystal drop earrings",
+  "ankle": "",
+  "weapon_noun": "sword",
+  "weapon_hand": "right hand",
+  "hold_action": "{V:grip} the ancient ice-crystal sword \"青霜\" raised before {o}",
+  "hold_tail": "raised before {o}",
+  "weapon_charm": "a swirling halo of frost-blue light coiling around the blade, with a cold pillar of light falling from its tip",
+  "companions": "frost cranes wreathed in pale-blue sword-light",
+  "expressions": [
+    "清冷浅笑",
+    "垂眸问剑",
+    "微醺霜酿",
+    "侧颜回盼"
+  ],
+  "expr_desc_1": "{p} eyelids sit cool and half lowered with the pupils showing beneath them, and the corners of {p} mouth curve up into a soft cool smile that never quite reaches {p} eyes",
+  "expr_desc_2": "{p} head is upright but {p} lids are lowered until {p} gaze rests down and away and {p} eyes are barely open, {p} lips closed and relaxed",
+  "expr_desc_3": "{p} head tips a little back, {p} lids sit low and glossy, {p} lips part loosely and colour rises on both cheeks",
+  "expr_desc_4": "{p} head turns three-quarters away from the reader and {p} chin lifts, while {p} eyes turn back toward the reader over {p} shoulder",
+  "detail_upper": [
+    "发饰细节",
+    "眉心剑印细节",
+    "腰饰细节",
+    "剑身细节"
+  ],
+  "detail_lower": [
+    "袖摆细节",
+    "裙摆细节",
+    "鞋履细节",
+    "材质细节"
+  ],
+  "colors": [
+    {
+      "hex": "#F7FAFC",
+      "cn": "月白",
+      "en": "moon white"
+    },
+    {
+      "hex": "#DCEDF6",
+      "cn": "霜蓝",
+      "en": "frost blue"
+    },
+    {
+      "hex": "#B4D9EC",
+      "cn": "冰蓝",
+      "en": "ice blue"
+    },
+    {
+      "hex": "#7FB4D2",
+      "cn": "湖蓝",
+      "en": "lake blue"
+    },
+    {
+      "hex": "#4E82A8",
+      "cn": "青碧",
+      "en": "slate teal"
+    },
+    {
+      "hex": "#2A4A63",
+      "cn": "暮山青",
+      "en": "dusk slate"
+    }
+  ],
+  "color_verse": [
+    "霜鹤如梦，",
+    "我为你，",
+    "长守青霜。"
+  ],
+  "profile": [
+    "姓名：凌霜",
+    "身份：霜华灵境·守剑人",
+    "年龄：二十",
+    "性格：清冷自持，剑心不折",
+    "喜好：雪巅问剑、煮雪烹茶、独守青霜",
+    "武器：青霜古剑·凝霜"
+  ],
+  "couplet": "我本无心，只因你入梦，便留了心。",
+  "weapon_drawing": "a small drawing of the ancient ice-crystal sword",
+  "background_text": "凌霜，霜华灵境的守剑人。{T}以剑引鹤，以霜为舟，渡人出尘，却从不入旁人的江湖。看似清冷自持、游戏人间，实则剑心孤勇，只肯在雪巅独酌。{T}在灵境中种满寒松，引万千霜鹤为伴，唯独等一个敢拔剑的对手。剑声起时，霜裂千峰；剑声落处，冰消无痕。",
+  "signature": "—— 一剑一鹤一浮生，梦里不知身是客。",
+  "vine": "frosted pine vine",
+  "drop": "frost crystals",
+  "lighting": "the cold ice-blue moonlight behind thin cloud and the frost-blue glare of the blade",
+  "palette": "moon white, ice blue and slate teal",
+  "mood": "cold, quietly resolute"
+}

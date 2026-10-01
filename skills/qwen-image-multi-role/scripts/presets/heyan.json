@@ -1,0 +1,117 @@
+{
+  "preset_id": "heyan",
+  "theme_label_cn": "秋收黄主题 · 笛 · 丰谷灵境·守穗人",
+  "name_cn": "禾晏",
+  "seal_cn": "禾晏",
+  "medallion_char": "禾",
+  "verse1": "一穗垂丰岁，",
+  "verse2": "半梦借君眠。",
+  "age_desc": "of about twenty",
+  "age_phrase": "a slender young woman of about twenty",
+  "paper_sheet": "warm rice-yellow-tinted",
+  "paper_whisper": "harvest gold",
+  "ground_tint": "rice-yellow",
+  "watermark": "rice ears, golden sparrows and wheat waves",
+  "watermark_noun": "rice-ear",
+  "border_color": "golden-brown",
+  "stain_color": "amber",
+  "shadow_color": "amber",
+  "scene_name": "painted harvest valley dreamscape",
+  "gradient": "pale rice-yellow at the top to a deeper amber gold lower down",
+  "hanging_elements": "ginkgo branches and rice ears",
+  "hanging_short": "rice ears",
+  "drifting_elements": "drifting grain",
+  "drifting_short": "rice ears",
+  "moon_halo": "a hazy golden moon ringed by an amber halo",
+  "backdrop": "silhouetted mountain ridges and a small tiered Chinese pavilion and granary standing behind the figure",
+  "motes": "gold motes",
+  "hair_color": "pale rice-silver",
+  "hair_ornaments": "small rice-ear sprigs and gold sparrow pins",
+  "robe_color": "autumn-yellow",
+  "robe_gradient": "rice-wave yellow at the chest to saturated amber gold at the trailing hem",
+  "sash": "wheat ears and bronze bells",
+  "crown": "rice-ear flower crown",
+  "earrings": "golden sparrow earrings",
+  "ankle": "gold ankle ornaments",
+  "weapon_noun": "flute",
+  "hold_action": "{V:hold} a golden rice-ear jade flute \"丰眠\" raised before {p} lips",
+  "hold_tail": "raised to the lips",
+  "weapon_charm": "a golden grain charm hanging from its lower end",
+  "companions": "golden sparrows",
+  "expressions": [
+    "温软浅笑",
+    "垂眸听风",
+    "微醺桂酿",
+    "侧颜回盼"
+  ],
+  "expr_desc_1": "{p} eyelids sit soft and half lowered with the pupils showing beneath them, and the corners of {p} mouth curve up into a gentle warm smile",
+  "expr_desc_2": "{p} head is upright but {p} lids are lowered until {p} gaze rests down and away and {p} eyes are barely open, {p} lips closed and relaxed",
+  "expr_desc_3": "{p} head tips a little back, {p} lids sit low and glossy, {p} lips part loosely and colour rises on both cheeks",
+  "expr_desc_4": "{p} head turns three-quarters away from the reader and {p} chin lifts, while {p} eyes turn back toward the reader over {p} shoulder",
+  "detail_upper": [
+    "发饰细节",
+    "金雀耳饰",
+    "腰饰细节",
+    "笛子细节"
+  ],
+  "detail_lower": [
+    "袖摆细节",
+    "裙摆细节",
+    "鞋履细节",
+    "材质细节"
+  ],
+  "colors": [
+    {
+      "hex": "#FBF6E8",
+      "cn": "米白",
+      "en": "rice white"
+    },
+    {
+      "hex": "#F2E2A8",
+      "cn": "稻浪黄",
+      "en": "rice-wave yellow"
+    },
+    {
+      "hex": "#E4B84C",
+      "cn": "秋收黄",
+      "en": "harvest yellow"
+    },
+    {
+      "hex": "#C99A2E",
+      "cn": "金桂黄",
+      "en": "osmanthus gold"
+    },
+    {
+      "hex": "#A8741A",
+      "cn": "琥珀金",
+      "en": "amber gold"
+    },
+    {
+      "hex": "#6E4B1F",
+      "cn": "暮金褐",
+      "en": "dusk gold-brown"
+    }
+  ],
+  "color_verse": [
+    "金穗如梦，",
+    "我为你，",
+    "长守丰年。"
+  ],
+  "profile": [
+    "姓名：禾晏",
+    "身份：丰谷灵境·守穗人",
+    "年龄：二十",
+    "性格：温厚勤恳，外柔内韧",
+    "喜好：晒谷、编麦穗、酿桂花酒、听风",
+    "武器：金穗玉笛·丰眠"
+  ],
+  "couplet": "我本无心，只因你入梦，便留了心。",
+  "weapon_drawing": "a small drawing of the golden rice-ear jade flute",
+  "background_text": "禾晏，丰谷灵境的守穗人。{T}以笛引雀，以穗为舟，渡人归仓，却从不入他人的丰年。看似温厚散漫、游戏人间，实则清醒坚韧，只肯在月下独酌。{T}在灵境中种满金稻，引万千金雀为伴，唯独等一个从不归仓的人。笛声起时，金穗覆野；笛声落处，秋收无痕。",
+  "signature": "—— 一穗一雀一丰年，梦里不知身是客。",
+  "vine": "rice-ear and ginkgo vine",
+  "drop": "grain",
+  "lighting": "the warm golden sun behind thin cloud",
+  "palette": "rice white, harvest yellow and amber gold",
+  "mood": "warm, quietly contented"
+}
