@@ -2,86 +2,52 @@
 
 [简体中文](README.md) · **English**
 
-> Turn a short character brief into a production-ready English prompt for a multi-panel character reference card.
+> A collection of Agent Skills that multi-agent systems can invoke directly. Plain text, zero dependencies, copy-and-go.
 
 [![License](https://img.shields.io/badge/license-MIT-3DA639.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.8%2B-3776AB.svg)](#quick-start)
-[![Dependencies](https://img.shields.io/badge/dependencies-none-9E9E9E.svg)](#quick-start)
-
-![Overview of six example characters](doc/examples-overview.jpg)
+[![Python](https://img.shields.io/badge/python-3.8%2B-3776AB.svg)](#installation)
+[![Dependencies](https://img.shields.io/badge/dependencies-none-9E9E9E.svg)](#installation)
 
 ---
 
 ## What this is
 
-`skills-project` is a collection of **Agent Skills** that can be invoked directly by multi-agent systems. It currently ships one skill: `qwen-image-multi-role`.
+`skills-project` is a repository of **Agent Skills**. Each skill is a self-contained directory under `skills/`, with a `SKILL.md` entry point. **No personal paths, no dependency on any particular agent platform** — copy a skill folder into whatever skill directory your agent reads and it works.
 
-### The problem it solves
+Currently shipping **1** skill:
 
-Generating a *character reference card* with Qwen-Image 2.1 — a single image that contains a full-body portrait, three-view sheet, expression sheet, detail sheet and an attribute column — is not hard because of the art. It is hard because **the layout has to be written as one paragraph the model can follow**: how many cells, what each cell is called, what each cell shows, how the Chinese text is arranged, and where whitespace is mandatory. Get it right once, and the next character breaks the whole sheet.
-
-This project freezes that layout into two layers:
-
-- **A 12-paragraph template** (`references/template-en.txt`) — the single source of truth for the layout. It contains only `{{placeholders}}`, never a concrete character.
-- **79 variable fields** — changing characters means changing values, never the template.
-
-The convergence criterion is not "looks about right" but **character-by-character comparison**: prompts rendered from the four validated variable sets are byte-identical to the human-approved originals (ignoring newline style). Fill the values in correctly and the layout cannot drift.
+| Skill | What it does | Entry point |
+|---|---|---|
+| [qwen-image-multi-role](#skill-qwen-image-multi-role) | Compiles a short character brief into a production-ready prompt for a multi-panel character reference card | `skills/qwen-image-multi-role/SKILL.md` |
 
 ---
 
-## Repository layout
+## Installation
 
-```
-skills-project/
-├── LICENSE                                 MIT
-├── README.md / README_EN.md                Chinese / English
-├── CHANGELOG.md
-├── tools/install.py                        Install / sync skills into your agent
-├── doc/
-│   ├── examples-overview.jpg               Overview of six characters
-│   └── qwen-image-multi-role.jpg           Reference ComfyUI setup
-├── examples/
-│   └── qwen-image-multi-role/              Rendered cards + their prompts (paired)
-│       ├── 01紫嫣.jpg   ·  01紫嫣角色多视图.txt
-│       │   …
-│       └── 06凌霜.jpg   ·  06凌霜角色多视图.txt
-└── skills/
-    └── qwen-image-multi-role/              ← the skill itself
-        ├── SKILL.md                        Self-contained entry point
-        ├── references/
-        │   ├── template-en.txt             The 12-paragraph template
-        │   └── examples/                   4 originals + 2 variable demos + 2 comparisons
-        └── scripts/
-            ├── render_prompt.py            JSON → prompt (validate + render)
-            ├── verify_presets.py           3-gate regression (run after editing the template)
-            └── presets/                    4 validated variable sets
-```
-
----
-
-## Quick start
-
-### Install
-
-The skill is a plain text directory with **zero third-party dependencies** (Python standard library only). Copy the skill folder into your agent's skill directory:
+A skill is a plain text directory with **zero third-party dependencies** (Python standard library only). Copy the skill folder into the skill directory used by your agent:
 
 ```bash
-# WorkBuddy user-level skills (macOS / Linux)
-cp -r skills/qwen-image-multi-role ~/.workbuddy/skills/
+# macOS / Linux
+cp -r skills/qwen-image-multi-role <your-skill-directory>/
 ```
 
 ```powershell
 # Windows PowerShell
-Copy-Item -Recurse skills\qwen-image-multi-role "$env:USERPROFILE\.workbuddy\skills\"
+Copy-Item -Recurse skills\qwen-image-multi-role "<your-skill-directory>\"
 ```
+
+> Different agents read skills from different places (a dot-directory under your home folder, a directory inside the project, …). Put it wherever your agent expects. **This repository assumes no particular location.**
 
 Or use the bundled sync script — it only copies what changed, and can tell you whether the two copies have already drifted:
 
 ```bash
-python tools/install.py              # install / update into ~/.workbuddy/skills
-python tools/install.py --check      # compare only, write nothing; exit code 2 on drift
-python tools/install.py --to <DIR>   # custom target skill directory
-python tools/install.py --prune      # also remove files deleted from the repo
+python tools/install.py --to <your-skill-directory>            # install / update
+python tools/install.py --to <your-skill-directory> --check     # compare only; exit code 2 on drift
+python tools/install.py --to <your-skill-directory> --prune     # also remove files deleted from the repo
+
+# Set an environment variable once to skip repeating the path
+export AGENT_SKILLS_DIR=<your-skill-directory>   # PowerShell: $env:AGENT_SKILLS_DIR="..."
+python tools/install.py --check
 ```
 
 > **Note**: the installed location is a **copy** of the repo, not a symlink — the two can drift apart. After editing anything under `skills/`, run `install.py`, or use `--check` before committing.
@@ -91,6 +57,63 @@ Once installed, just ask in natural language — for example:
 > Make another multi-view sheet like Zhiyan's, for a character called 墨隐 — ink-blue theme, a brush, keeper of a scripture vault, male
 
 The skill is matched automatically and returns a 79-field variable table plus a prompt ready to paste into the generation node.
+
+---
+
+## Repository conventions
+
+```
+skills-project/
+├── LICENSE
+├── README.md / README_EN.md              Chinese / English
+├── CHANGELOG.md
+├── tools/install.py                      Install / sync skills into your agent's skill directory
+├── skills/
+│   └── <skill-name>/                     ← the skill itself (this is what gets installed)
+│       ├── SKILL.md                       Required: self-contained entry point with YAML frontmatter
+│       ├── references/                    Optional: templates, samples, other read-only assets
+│       └── scripts/                       Optional: scripts (keep them dependency-free)
+├── examples/
+│   └── <skill-name>/                     ← that skill's example outputs (not installed)
+└── doc/
+    └── <skill-name>/                     ← images used by that skill's README chapter
+```
+
+**The one convention: all three directories are named after the skill.** The skill name appears in four places and they must agree — the `skills/<skill-name>/` directory name, the `name` in `SKILL.md`'s frontmatter, `examples/<skill-name>/`, and `doc/<skill-name>/`.
+
+Two more rules:
+
+- **Skills never reference each other.** Each `skills/<skill-name>/` is self-contained; the installer copies directories wholesale and never stitches across them.
+- **No absolute paths inside `SKILL.md`.** Scripts locate themselves via `__file__`, so they run from wherever the skill was installed.
+
+### Adding a new skill
+
+1. Create `skills/<skill-name>/SKILL.md` with YAML frontmatter (`name` and `description` are required).
+2. Add `references/` (templates / samples) and `scripts/` if you need them.
+3. Put example outputs in `examples/<skill-name>/` and README images in `doc/<skill-name>/`.
+4. Add a row to the table in "What this is" above, and a chapter below named `## Skill: <skill-name>` (copy the shape of the existing chapter — it does not need to be elaborate).
+5. Run `python tools/install.py --to <your-skill-directory>` to install.
+
+> `tools/install.py` discovers every directory under `skills/` that contains a `SKILL.md`, so **adding a skill requires no script changes**. To install just one: `--skill <skill-name>`.
+
+---
+
+## Skill: qwen-image-multi-role
+
+> Turn a short character brief into a production-ready English prompt for a multi-panel character reference card.
+
+![Overview of six example characters](doc/qwen-image-multi-role/examples-overview.jpg)
+
+### The problem it solves
+
+Generating a *character reference card* with Qwen-Image 2.1 — a single image that contains a full-body portrait, three-view sheet, expression sheet, detail sheet and an attribute column — is not hard because of the art. It is hard because **the layout has to be written as one paragraph the model can follow**: how many cells, what each cell is called, what each cell shows, how the Chinese text is arranged, and where whitespace is mandatory. Get it right once, and the next character breaks the whole sheet.
+
+This skill freezes that layout into two layers:
+
+- **A 12-paragraph template** (`references/template-en.txt`) — the single source of truth for the layout. It contains only `{{placeholders}}`, never a concrete character.
+- **79 variable fields** — changing characters means changing values, never the template.
+
+The convergence criterion is not "looks about right" but **character-by-character comparison**: prompts rendered from the four validated variable sets are byte-identical to the human-approved originals (ignoring newline style). Fill the values in correctly and the layout cannot drift.
 
 ### Render a prompt
 
@@ -124,10 +147,6 @@ python scripts/verify_presets.py                           # run after editing t
 | **Add a new character** (most common) | Copy `scripts/presets/zhiyan.json` → edit values → validate → render. **Do not touch the template** |
 | No colour reference at all | Follow the derivation chain in `SKILL.md` §3 to derive all 79 fields from a "theme triad" |
 | Just want to see the output | `--preset zhiyan` (or `feifeng` / `heyan` / `taoyao`) |
-
----
-
-## Skill highlights
 
 ### 79 fields in eight groups
 
@@ -163,7 +182,7 @@ For your own free text (`hold_action`, `age_desc`, …) use tokens so it switche
 
 ### Three defences against hard-coded attributes
 
-When a template is extracted from a set of samples, **properties shared by every sample are the ones most likely to be mistaken for constants** — and such false constants are indistinguishable from the real skeleton by eye. This project therefore ships three **executable** defences:
+When a template is extracted from a set of samples, **properties shared by every sample are the ones most likely to be mistaken for constants** — and such false constants are indistinguishable from the real skeleton by eye. This skill therefore ships three **executable** defences:
 
 | Defence | What it does |
 |---|---|
@@ -173,11 +192,9 @@ When a template is extracted from a set of samples, **properties shared by every
 
 **The criterion (worth more than the fix itself)**: if a noun in a sentence stops making sense for a different character, and it is *not* a `{{placeholder}}` in the template — it is hard-coded. See `SKILL.md` §6.6.
 
----
+### Reference generation setup
 
-## Reference generation setup
-
-![Reference ComfyUI configuration](doc/qwen-image-multi-role.jpg)
+![Reference ComfyUI configuration](doc/qwen-image-multi-role/comfyui-reference.jpg)
 
 | Item | Value |
 |---|---|
@@ -189,9 +206,7 @@ When a template is extracted from a set of samples, **properties shared by every
 | Sampling | cfg 1.0 / steps 30 / euler / simple |
 | thinking_mode | on |
 
----
-
-## Example characters
+### Example characters
 
 | # | Character | Theme triad | Weapon | Companion | Image / prompt |
 |---|---|---|---|---|---|

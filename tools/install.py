@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""把 skills/ 下的技能安装（或同步）到 Agent 的技能目录。
+"""把 skills/ 下的技能安装（或同步）到智能体的技能目录。
 
 零第三方依赖，只用标准库。
 
 用法：
-    python tools/install.py                  # 安装/更新到默认目录
-    python tools/install.py --to <DIR>       # 指定目标目录
-    python tools/install.py --check          # 只比对不写入；有差异时退出码 2
-    python tools/install.py --skill <NAME>   # 只处理指定技能
-    python tools/install.py --prune          # 同时删除目标里已从仓库移除的文件
+    python tools/install.py --to <DIR>        # 安装/更新到指定技能目录
+    python tools/install.py --check           # 只比对不写入；有差异时退出码 2
+    python tools/install.py --skill <NAME>    # 只处理指定技能
+    python tools/install.py --prune           # 同时删除目标里已从仓库移除的文件
+
+目标目录通过 --to 指定，或用环境变量 AGENT_SKILLS_DIR 预设。本脚本**不假定**任何
+具体智能体的目录位置 —— 不同智能体读取技能的目录不同（用户主目录下的点目录、或项目内
+目录等），由使用者按所用智能体的说明决定。
 
 为什么需要它：安装位置是仓库的**副本**（不是符号链接），两边会各自漂移。
 改完仓库里的技能后跑一次本脚本，或用 --check 在 CI / 提交前确认没有漂移。
@@ -24,7 +27,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 SRC_ROOT = os.path.join(REPO, "skills")
-DEFAULT_DEST = os.path.join(os.path.expanduser("~"), ".workbuddy", "skills")
+ENV_VAR = "AGENT_SKILLS_DIR"
+DEFAULT_DEST = os.environ.get(ENV_VAR) or None
 
 SKIP_DIRS = {"__pycache__", ".git", ".idea", ".vscode"}
 SKIP_FILES = {".DS_Store", "Thumbs.db", "Desktop.ini"}
@@ -105,12 +109,21 @@ def sync_one(name, dest_root, check, prune):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="安装或同步 skills/ 下的技能到 Agent 技能目录")
-    ap.add_argument("--to", default=DEFAULT_DEST, help="目标技能目录（默认 %s）" % DEFAULT_DEST)
+    ap = argparse.ArgumentParser(description="安装或同步 skills/ 下的技能到智能体技能目录")
+    ap.add_argument("--to", default=DEFAULT_DEST,
+                    help="目标技能目录（也可用环境变量 %s 预设）" % ENV_VAR)
     ap.add_argument("--skill", default=None, help="只处理指定技能名")
     ap.add_argument("--check", action="store_true", help="只比对不写入；有差异退出码 2")
     ap.add_argument("--prune", action="store_true", help="删除目标里已从仓库移除的文件")
     args = ap.parse_args()
+
+    if not args.to:
+        print("需要指定目标技能目录。", file=sys.stderr)
+        print("  方式一：python tools/install.py --to <你的技能目录>", file=sys.stderr)
+        print("  方式二：设置环境变量 %s 后直接运行" % ENV_VAR, file=sys.stderr)
+        print("说明：技能是纯文本目录，放进你所用的智能体读取技能的目录即可；"
+              "本脚本不假定任何具体位置。", file=sys.stderr)
+        return 1
 
     names = list_skills()
     if args.skill:

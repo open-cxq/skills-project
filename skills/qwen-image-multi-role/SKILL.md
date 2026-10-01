@@ -12,26 +12,26 @@ agent_created: true
 
 ---
 
-## 0. 30 秒上手（多智能体 / 新会话照抄）
+## 0. 30 秒上手（新会话照抄）
 
 ### 一条命令出成品
 
 ```bash
-# SK 指向本技能目录（含 SKILL.md 的那一层）
-#   已安装位置（多智能体照抄）：C:/Users/XQ/.workbuddy/skills/qwen-image-multi-role
-#   仓库内位置：                skills/qwen-image-multi-role
-SK="C:/Users/XQ/.workbuddy/skills/qwen-image-multi-role"
+# 在本技能目录（含 SKILL.md 的那一层）内执行
 PY="python"        # 任意 Python 3；脚本零第三方依赖，只用标准库
 
 # ① 体检（改完变量先跑这个，0 秒知道缺什么）
-"$PY" "$SK/scripts/render_prompt.py" --json 我的角色.json --check
+"$PY" scripts/render_prompt.py --json 我的角色.json --check
 
 # ② 出行（单行版：换行写成字面 \n，就是可以直接粘进生图节点的那种）
-"$PY" "$SK/scripts/render_prompt.py" --json 我的角色.json --escape --out 我的角色多视图.txt
+"$PY" scripts/render_prompt.py --json 我的角色.json --escape --out 我的角色多视图.txt
 
 # ③ 想要分段可读版给人看：去掉 --escape
-"$PY" "$SK/scripts/render_prompt.py" --json 我的角色.json
+"$PY" scripts/render_prompt.py --json 我的角色.json
 ```
+
+脚本用 `__file__` 自定位模板与预设，**安装到哪个目录都能跑，不需要任何绝对路径**。
+只需保证调用时的**工作目录在本技能目录内**（`cd` 过去即可）；模板另有 `--template` 可显式覆盖。
 
 ### 三条路径，先选一条
 

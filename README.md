@@ -2,95 +2,125 @@
 
 **简体中文** · [English](README_EN.md)
 
-> 把一段人物设定，编译成一份可直接出图的「多面板角色参考卡」英文提示词。
+> 可直接被多智能体调用的技能集合。纯文本、零第三方依赖、复制即用。
 
 [![License](https://img.shields.io/badge/license-MIT-3DA639.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.8%2B-3776AB.svg)](#快速开始)
-[![Dependencies](https://img.shields.io/badge/dependencies-none-9E9E9E.svg)](#快速开始)
-
-![六位角色示例总览](doc/examples-overview.jpg)
+[![Python](https://img.shields.io/badge/python-3.8%2B-3776AB.svg)](#安装与使用)
+[![Dependencies](https://img.shields.io/badge/dependencies-none-9E9E9E.svg)](#安装与使用)
 
 ---
 
 ## 这是什么
 
-`skills-project` 是一个 **Agent Skill 集合仓库**，收录可直接被多智能体调用的技能。目前收录 1 个技能：`qwen-image-multi-role`。
+`skills-project` 是一个 **Agent Skill 集合仓库**。每个技能是 `skills/` 下的一个独立目录，
+自带 `SKILL.md` 入口；**不含个人路径、不绑定任何具体智能体平台** —— 复制到你所用的智能体的
+技能目录即可生效。
 
-### 它解决什么问题
+目前收录 **1** 个技能：
 
-用 Qwen-Image 2.1 出一张「角色参考卡」（同一张图里同时有全身立绘、三视图、表情展示、细节展示和属性栏）时，难的从来不是画，而是**把版面写成模型听得懂的一段话**：几格、每格的格名、每格拍什么、中文文案怎么排、哪里必须留白。写一次能出对，换个人物常常整版崩掉。
-
-本项目把这个版面固化下来，拆成两层：
-
-- **一份 12 段模板**（`references/template-en.txt`）—— 版式的单一事实源，只含 `{{占位符}}`，不含任何具体角色；
-- **79 个变量字段** —— 换角色只换值，不动模板。
-
-收敛判据不是「看起来像」，而是**逐字符比对**：4 套已验收变量渲染出的提示词，与人工验收通过的原稿完全一致（忽略换行形式）。所以新角色只要把值填对，版式就不会跑偏。
+| 技能 | 一句话说明 | 入口 |
+|---|---|---|
+| [qwen-image-multi-role](#技能qwen-image-multi-role) | 把一段人物设定编译成「多面板角色参考卡」英文提示词 | `skills/qwen-image-multi-role/SKILL.md` |
 
 ---
 
-## 目录结构
+## 安装与使用
 
-```
-skills-project/
-├── LICENSE                                 MIT 协议
-├── README.md / README_EN.md                中文 / 英文说明
-├── CHANGELOG.md
-├── tools/install.py                        安装 / 同步技能到 Agent 技能目录
-├── doc/
-│   ├── examples-overview.jpg               六位角色总览
-│   └── qwen-image-multi-role.jpg           ComfyUI 参考出图配置
-├── examples/
-│   └── qwen-image-multi-role/              成品图 + 对应提示词（一一成对）
-│       ├── 01紫嫣.jpg   ·  01紫嫣角色多视图.txt
-│       │   …
-│       └── 06凌霜.jpg   ·  06凌霜角色多视图.txt
-└── skills/
-    └── qwen-image-multi-role/              ← 技能本体
-        ├── SKILL.md                        自包含入口，可被多智能体直接调用
-        ├── references/
-        │   ├── template-en.txt             12 段定稿模板（单一事实源）
-        │   └── examples/                   4 份原稿 + 2 个变量示范 + 2 份对照
-        └── scripts/
-            ├── render_prompt.py            JSON → 提示词（体检 + 渲染）
-            ├── verify_presets.py           三关回归（改模板后必跑）
-            └── presets/                    4 套已验收变量
-```
-
----
-
-## 快速开始
-
-### 安装
-
-技能是纯文本目录，**零第三方依赖**（只用 Python 标准库）。把技能目录复制进 Agent 的技能目录即可：
+技能是纯文本目录，**零第三方依赖**（只用 Python 标准库）。把技能目录整体复制进你所用的
+智能体的技能目录即可：
 
 ```bash
-# WorkBuddy 用户级技能（macOS / Linux）
-cp -r skills/qwen-image-multi-role ~/.workbuddy/skills/
+# macOS / Linux
+cp -r skills/qwen-image-multi-role <你的技能目录>/
 ```
 
 ```powershell
 # Windows PowerShell
-Copy-Item -Recurse skills\qwen-image-multi-role "$env:USERPROFILE\.workbuddy\skills\"
+Copy-Item -Recurse skills\qwen-image-multi-role "<你的技能目录>\"
 ```
 
-也可以用仓库自带的同步脚本（推荐：它只拷贝有变化的文件，并能直接告出两边是否已经漂移）：
+> 不同智能体读取技能的目录位置不同（用户主目录下的点目录、项目内的目录等），请按你所用的
+> 智能体说明放置。**本仓库不假定任何具体位置。**
+
+也可以用仓库自带的同步脚本（只拷贝有变化的文件，并能直接告出两边是否已经漂移）：
 
 ```bash
-python tools/install.py              # 安装 / 更新到 ~/.workbuddy/skills
-python tools/install.py --check      # 只比对不写入；有差异时退出码 2
-python tools/install.py --to <目录>   # 指定目标技能目录
-python tools/install.py --prune      # 同时删除目标里已从仓库移除的文件
+python tools/install.py --to <你的技能目录>             # 安装 / 更新
+python tools/install.py --to <你的技能目录> --check      # 只比对不写入；有差异时退出码 2
+python tools/install.py --to <你的技能目录> --prune      # 同时删除目标里已从仓库移除的文件
+
+# 目录固定时可设环境变量，省去每次输入
+export AGENT_SKILLS_DIR=<你的技能目录>        # PowerShell: $env:AGENT_SKILLS_DIR="..."
+python tools/install.py --check
 ```
 
-> **注意**：安装位置是仓库的**副本**，不是符号链接 —— 两边会各自漂移。改完 `skills/` 下的内容记得跑一次 `install.py`，或用 `--check` 在提交前确认一致。
+> **注意**：安装位置是仓库的**副本**，不是符号链接 —— 两边会各自漂移。改完 `skills/` 下的内容
+> 记得跑一次 `install.py`，或用 `--check` 在提交前确认一致。
 
 装好后直接用自然语言说就行 —— 例如：
 
 > 按紫嫣那种多视图，做一个叫「墨隐」的角色，主题是墨蓝·笔·藏书境·守卷人，男性
 
 技能会被自动匹配并产出一份 79 字段变量表 + 一份可直接粘贴出图的提示词。
+
+---
+
+## 目录约定
+
+```
+skills-project/
+├── LICENSE
+├── README.md / README_EN.md              中文 / 英文说明
+├── CHANGELOG.md
+├── tools/install.py                      安装 / 同步技能到智能体的技能目录
+├── skills/
+│   └── <技能名>/                          ← 技能本体（会被安装）
+│       ├── SKILL.md                       必须：自包含入口，含 YAML frontmatter
+│       ├── references/                    可选：模板、样例等被读取的资源
+│       └── scripts/                       可选：脚本（建议零第三方依赖）
+├── examples/
+│   └── <技能名>/                          ← 该技能的示例产物（不进安装）
+└── doc/
+    └── <技能名>/                          ← 该技能在 README 里的配图
+```
+
+**唯一约定：三个目录都以技能名命名。** 技能名出现在四处，且必须保持一致 ——
+`skills/<技能名>/` 目录名、`SKILL.md` 里的 frontmatter `name`、`examples/<技能名>/`、`doc/<技能名>/`。
+
+另外两条：
+
+- **技能之间互不引用**。`skills/<技能名>/` 是自包含的，安装脚本按目录整体拷贝，不做跨目录拼接。
+- **`SKILL.md` 里不写绝对路径**。脚本用 `__file__` 自定位，装到哪一层都能跑。
+
+### 新增一个技能
+
+1. 建 `skills/<技能名>/SKILL.md`，写 YAML frontmatter（`name`、`description` 必填）。
+2. 需要的话加 `references/`（模板 / 样例）与 `scripts/`（脚本）。
+3. 示例产物放 `examples/<技能名>/`；README 配图放 `doc/<技能名>/`。
+4. 在本文「这是什么」的表格里加一行，并在下面加一章 `## 技能：<技能名>`（照现有章节的写法即可，不必复杂）。
+5. `python tools/install.py --to <你的技能目录>` 完成安装。
+
+> `tools/install.py` 会自动发现 `skills/` 下所有含 `SKILL.md` 的目录，**加技能不需要改脚本**。
+> 只想装其中一个：加 `--skill <技能名>`。
+
+---
+
+## 技能：qwen-image-multi-role
+
+> 把一段人物设定，编译成一份可直接出图的「多面板角色参考卡」英文提示词。
+
+![六位角色示例总览](doc/qwen-image-multi-role/examples-overview.jpg)
+
+### 它解决什么问题
+
+用 Qwen-Image 2.1 出一张「角色参考卡」（同一张图里同时有全身立绘、三视图、表情展示、细节展示和属性栏）时，难的从来不是画，而是**把版面写成模型听得懂的一段话**：几格、每格的格名、每格拍什么、中文文案怎么排、哪里必须留白。写一次能出对，换个人物常常整版崩掉。
+
+本技能把这个版面固化下来，拆成两层：
+
+- **一份 12 段模板**（`references/template-en.txt`）—— 版式的单一事实源，只含 `{{占位符}}`，不含任何具体角色；
+- **79 个变量字段** —— 换角色只换值，不动模板。
+
+收敛判据不是「看起来像」，而是**逐字符比对**：4 套已验收变量渲染出的提示词，与人工验收通过的原稿完全一致（忽略换行形式）。所以新角色只要把值填对，版式就不会跑偏。
 
 ### 生成一份提示词
 
@@ -123,10 +153,6 @@ python scripts/verify_presets.py                           # 改模板后必跑
 | **换一个新角色**（最常用） | 复制 `scripts/presets/zhiyan.json` → 改值 → 体检 → 出行。**不要碰模板** |
 | 主题色系完全没有参考 | 按 `SKILL.md` §3 的推导链，从「主题三件套」派生出全部 79 个字段 |
 | 只想看效果 | `--preset zhiyan`（或 `feifeng` / `heyan` / `taoyao`） |
-
----
-
-## 技能要点
 
 ### 79 个字段分八组
 
@@ -162,7 +188,7 @@ python scripts/verify_presets.py                           # 改模板后必跑
 
 ### 防「写死」的三道防线
 
-从样例集抽模板时，**样例共有的属性最容易被误当常量写死** —— 而且这类假常量与真骨架肉眼无法区分。本项目为此设了三道**可执行**的防线：
+从样例集抽模板时，**样例共有的属性最容易被误当常量写死** —— 而且这类假常量与真骨架肉眼无法区分。本技能为此设了三道**可执行**的防线：
 
 | 防线 | 作用 |
 |---|---|
@@ -172,11 +198,9 @@ python scripts/verify_presets.py                           # 改模板后必跑
 
 **判据（比修复本身更值钱）**：一句话里的某个名词，换个角色就说不通了，而它在模板里不是 `{{占位符}}` —— 那就是写死。详见 `SKILL.md` §6.6。
 
----
+### 出图环境参考
 
-## 出图环境参考
-
-![ComfyUI 参考配置](doc/qwen-image-multi-role.jpg)
+![ComfyUI 参考配置](doc/qwen-image-multi-role/comfyui-reference.jpg)
 
 | 项 | 值 |
 |---|---|
@@ -188,9 +212,7 @@ python scripts/verify_presets.py                           # 改模板后必跑
 | 采样 | cfg 1.0 / steps 30 / euler / simple |
 | thinking_mode | 开启 |
 
----
-
-## 示例角色
+### 示例角色
 
 | # | 角色 | 主题三件套 | 兵器 | 伴生 | 图 / 提示词 |
 |---|---|---|---|---|---|
